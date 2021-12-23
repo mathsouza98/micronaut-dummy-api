@@ -1,0 +1,17 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    restart: always
+    container_name: dummyapi-mysql
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    volumes:
+      - ../docker-data/mysql:/var/lib/mysql
+      - ../docker-data/mysql-conf:/etc/mysql/conf.d
+      - ./src/main/resources/sql:/docker-entrypoint-initdb.d
