@@ -13,6 +13,8 @@ datasources:
 
 jpa:
   default:
+    entity-scan:
+      packages: 'example.micronaut.core.models'
     properties:
       hibernate:
         hbm2ddl:
