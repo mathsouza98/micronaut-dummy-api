@@ -10,4 +10,5 @@ import org.mapstruct.ReportingPolicy
 interface BookMapper {
     fun fromRequest(bookRequest: BookRequest) : Book
     fun toResponse(book: Book): BookResponse
+    fun toResponse(books: List<Book>): List<BookResponse>
 }
