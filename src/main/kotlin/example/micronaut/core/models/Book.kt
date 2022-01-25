@@ -11,6 +11,6 @@ data class Book (
     val id: String?,
     val title: String,
     val pages: Int,
-    @OneToOne(cascade = [CascadeType.ALL])
-    val author: Author
+    @OneToOne
+    var author: Author
 )
